@@ -1,0 +1,25 @@
+/* About.css */
+.about-section {
+    background-color: #f8f9fa; /* Light grey background */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .card-custom {
+    background-color: #ffffff; /* White background for the card */
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+  }
+  
+  .text-primary-custom {
+    color: #007bff; /* Bootstrap primary color */
+  }
+  
+  .text-secondary-custom {
+    color: #6c757d; /* Bootstrap secondary color */
+  }
+  
+  .mt-custom {
+    margin-top: 30px;
+  }
+  

@@ -1,0 +1,41 @@
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.home-section {
+  background-color: #f8f9fa; /* Light grey background */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out; /* Apply fade-in animation */
+}
+
+.home-heading {
+  color: #007bff; /* Bootstrap primary color */
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out 0.5s; /* Delay start by 0.5s */
+}
+
+.home-subheading {
+  color: #6c757d; /* Bootstrap secondary color */
+  margin-bottom: 20px;
+}
+
+.home-text {
+  font-size: 18px;
+  line-height: 1.6;
+  animation: fadeIn 2s ease-in-out 1s; /* Delay start by 1s */
+}
+
+.home-pre {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #343a40; /* Bootstrap dark color */
+  animation: fadeIn 2s ease-in-out 1.5s; /* Delay start by 1.5s */
+}
