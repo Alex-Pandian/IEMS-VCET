@@ -1,4 +1,4 @@
-const Feedback = require('../models/feedback');
+const Feedback = require('../models/Feedback');
 const XLSX = require('xlsx');
 
 exports.addFeedback = async (req, res) => {

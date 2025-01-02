@@ -1,4 +1,4 @@
-const Event = require('../models/event');
+const Event = require('../models/Event');
 const Registration = require('../models/Registration');
 const sendEmail = require('../utils/emailService');
 
