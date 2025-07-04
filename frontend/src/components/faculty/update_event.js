@@ -46,7 +46,11 @@ const Update = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('image', file);
+        if (file) {
+            formData.append('image', file);
+        } else {
+            formData.append('existingBrochurePath', eventData.brochure_path);
+        }
         for (const key in eventData) {
             formData.append(key, eventData[key]);
         }
