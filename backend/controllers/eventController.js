@@ -16,7 +16,7 @@ exports.addEvent = async (req, res) => {
 
 exports.editEvent = async (req, res) => {
     const { faculty_id, title, description, starting_date, ending_date, time, venue} = req.body;
-    const brochure_path = req.file ? req.file.path: req.body.file.path;
+    const brochure_path = req.file ? req.file.path: req.body.existingBrochurePath;
     const id = req.params.id;
     try {
         const updatedEvent = await Event.findByIdAndUpdate(
