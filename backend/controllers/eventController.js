@@ -1,5 +1,5 @@
 const Event = require('../models/event');
-const Registration = require('../models/Registration');
+const Registration = require('../models/registration');
 const sendEmail = require('../utils/emailService');
 
 exports.addEvent = async (req, res) => {
