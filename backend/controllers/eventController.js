@@ -5,6 +5,7 @@ const sendEmail = require('../utils/emailService');
 exports.addEvent = async (req, res) => {
   const { faculty_id, title, description, starting_date, ending_date, time, venue} = req.body;
   const brochure_path = req.file.path;
+  console.log(brochure_path);
   try {
     let event = new Event({ faculty_id, title, description, starting_date, ending_date, time, venue, brochure_path});
     await event.save();
