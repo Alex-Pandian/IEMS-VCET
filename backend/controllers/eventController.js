@@ -5,7 +5,6 @@ const sendEmail = require('../utils/emailService');
 exports.addEvent = async (req, res) => {
   const { faculty_id, title, description, starting_date, ending_date, time, venue} = req.body;
   const brochure_path = req.file.path;
-  console.log(brochure_path);
   try {
     let event = new Event({ faculty_id, title, description, starting_date, ending_date, time, venue, brochure_path});
     await event.save();
@@ -96,7 +95,6 @@ exports.getPastEventsByFacultyId = async(req, res) => {
     }).select('_id title brochure_path starting_date');
     res.json(events);
   } catch (error) {
-    console.error(error.message);
     res.status(500).send('Server error');
   }
 };
@@ -113,7 +111,6 @@ exports.addFeedbackQuestions = async(req, res) => {
       }
       const registrations = await Registration.find({event_id : id});
       const recipients = registrations.map(item => item.email);
-      console.log(recipients);
       if (!recipients) {
           return res.status(404).json({ message: "Recipients not found" })
       }
