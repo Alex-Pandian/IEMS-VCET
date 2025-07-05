@@ -1,4 +1,4 @@
-const Registration = require('../models/Registration');
+const Registration = require('../models/registration');
 const XLSX = require('xlsx');
 
 exports.addRegistration = async (req, res) => {
