@@ -1,4 +1,4 @@
-const Event = require('../models/Event');
+const Event = require('../models/event');
 const Registration = require('../models/Registration');
 const sendEmail = require('../utils/emailService');
 
@@ -92,37 +92,6 @@ exports.getPastEventsByFacultyId = async(req, res) => {
     const events = await Event.find({
       faculty_id,
       ending_date: { $lt: now }
-    }).select('_id title brochure_path starting_date');
-    res.json(events);
-  } catch (error) {
-    console.error(error.message);
-    res.status(500).send('Server error');
-  }
-};
-
-exports.getPresentEventsByFacultyId = async(req, res) => {
-  const { faculty_id } = req.params;
-  try {
-    const now = new Date();
-    const events = await Event.find({
-      faculty_id,
-      starting_date: { $lte:now },
-      ending_date: { $gte: now }
-    }).select('_id title brochure_path starting_date');
-    res.json(events);
-  } catch (error) {
-    console.error(error.message);
-    res.status(500).send('Server error');
-  }
-};
-
-exports.getFutureEventsByFacultyId = async(req, res) => {
-  const { faculty_id } = req.params;
-  try {
-    const now = new Date();
-    const events = await Event.find({
-      faculty_id,
-      starting_date: { $gt: now }
     }).select('_id title brochure_path starting_date');
     res.json(events);
   } catch (error) {

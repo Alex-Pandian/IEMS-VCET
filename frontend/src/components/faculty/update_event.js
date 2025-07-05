@@ -83,7 +83,7 @@ const Update = () => {
                 ending_date: new Date(data.ending_date).toISOString().split('T')[0],
                 time: data.time,
                 venue: data.venue,
-                brochure_path: null,
+                brochure_path: data.brochure_path,
             });
             setSelectedEvent(eventId);
             setShowForm(true);
@@ -138,7 +138,7 @@ const Update = () => {
                             >
                                 <Card.Img
                                     variant="top"
-                                    src={`${process.env.REACT_APP_API_URL}/${event.brochure_path}`}
+                                    src={`${event.brochure_path}`}
                                     alt=""
                                     style={{ objectFit: 'cover', height: '200px' }}
                                 />

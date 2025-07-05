@@ -31,7 +31,7 @@ const AddPhoto = () => {
 
         // Fetch existing photos for the selected event
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/photos/getphoto/${eventId}`);
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/photos/get/${eventId}`);
             if (!response.ok) throw new Error('Network response was not ok');
             const data = await response.json();
             setPhotos(data);
@@ -96,7 +96,7 @@ const AddPhoto = () => {
                         {photos.map(photo => (
                             <div className="col-md-4 mb-4 d-flex flex-wrap" key={photo._id}>
                                 <Card className="shadow text-center" style={{ width: '18rem', height: '300px', overflow: 'hidden' }}>
-                                    <Card.Img variant="top" src={`${process.env.REACT_APP_API_URL}/${photo.photo_path}`} alt="" style={{ objectFit: 'cover', height: '200px' }} />
+                                    <Card.Img variant="top" src={`${photo.photo_path}`} alt="" style={{ objectFit: 'cover', height: '200px' }} />
                                     <Card.Body>
                                         <Button variant="danger" onClick={() => handleDeletePhoto(photo._id)}>Remove Photo</Button>
                                     </Card.Body>
@@ -116,7 +116,7 @@ const AddPhoto = () => {
                             >
                                 <Card.Img
                                     variant="top"
-                                    src={`${process.env.REACT_APP_API_URL}/${event.brochure_path}`}
+                                    src={`${event.brochure_path}`}
                                     alt=""
                                     style={{ objectFit: 'cover', height: '200px' }}
                                 />

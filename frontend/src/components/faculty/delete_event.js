@@ -45,7 +45,7 @@ const Delete = () => {
                         >
                             <Card.Img
                                 variant="top"
-                                src={`${process.env.REACT_APP_API_URL}/${event.brochure_path}`}
+                                src={`${event.brochure_path}`}
                                 alt=""
                                 style={{ objectFit: 'cover', height: '200px' }}
                             />

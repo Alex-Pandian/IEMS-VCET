@@ -1,19 +1,27 @@
 const multer = require('multer');
-const path = require('path');
-const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        cb(null, 'uploads');
-    },
-    filename: function(req, file, cb) {
-        cb(null, file.fieldname + Date.now() + path.extname(file.originalname));
-    }
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
-const max = 2 * 1000 * 1000;
+
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'event_brochures',               
+    allowed_formats: ['jpg', 'png', 'pdf'],
+    transformation: [{ quality: 'auto' }]    
+  },
+});
+
+const maxSize = 2 * 1000 * 1000;
+
 const upload = multer({
-    storage: storage,
-    limit: {
-        fileSize: max
-    }
+  storage: storage,
+  limits: { fileSize: maxSize }
 });
 
 module.exports = upload;

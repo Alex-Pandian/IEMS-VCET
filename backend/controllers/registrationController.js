@@ -3,8 +3,6 @@ const XLSX = require('xlsx');
 
 exports.addRegistration = async (req, res) => {
   const { event_id, name, email, department, year } = req.body;
-  console.log(req);
-  
   try {
     let registration = new Registration({ event_id, name, email, department, year });
     await registration.save();

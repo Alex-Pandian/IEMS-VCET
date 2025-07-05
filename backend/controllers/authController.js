@@ -5,7 +5,6 @@ const User = require('../models/User');
 exports.login = async (req, res) => {
   const { username, password } = req.body;
   try {
-    console.log('JWT_SECRET:', process.env.JWT_SECRET);
     const user = await User.findOne({ username });
     if (!user) {
       return res.status(400).json({ message: 'Invalid username' });

@@ -18,7 +18,6 @@ exports.addUser = async (req, res) => {
 exports.editUser = async (req, res) => {
     const { username, password } = req.body;
     try {
-        // Hash the password if it is being updated
         let updatedFields = { username };
         if (password) {
           const salt = await bcrypt.genSalt(10);

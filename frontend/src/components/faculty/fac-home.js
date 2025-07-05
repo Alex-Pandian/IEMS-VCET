@@ -56,7 +56,7 @@ const EventsList = () => {
           <div className="col-md-4 mb-4 d-flex flex-wrap" key={event._id}>
             <div className="card shadow text-center" style={{ width: '18rem', height: '400px', overflow: 'hidden' }}>
               <img
-                src={`${process.env.REACT_APP_API_URL}/${event.brochure_path}`}
+                src={`${event.brochure_path}`}
                 className="card-img-top"
                 alt={event.title}
                 style={{ objectFit: 'cover', height: '200px' }}

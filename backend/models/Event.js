@@ -8,7 +8,7 @@ const EventSchema = new mongoose.Schema({
   ending_date: { type: Date, required: true },
   time:{ type:String, required:true },
   venue: { type: String, required: true, maxlength: 100 },
-  brochure_path: { type: String, maxlength: 255 },
+  brochure_path: { type: String},
   feedback: { type: [String] }
 });
 

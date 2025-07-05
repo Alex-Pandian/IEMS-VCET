@@ -34,17 +34,6 @@ exports.deletePhoto = async (req, res) => {
     }
 };
 
-
-exports.getEventPhotos = async(req, res) => {
-    const { event_id } = req.params;
-    try {
-        const photos = await Photo.find({event_id});
-        res.json(photos);
-    } catch (err) {
-      res.status(500).send('Server Error');
-    }
-};
-
 exports.getPhotos = async (req, res) => {
     const { event_id } = req.params;
 

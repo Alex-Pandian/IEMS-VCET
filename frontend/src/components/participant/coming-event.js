@@ -66,7 +66,6 @@ const ComingEvents = () => {
                     ...regData
                 }),
             });
-            console.log(response)
             if (!response.ok) throw new Error('Network response was not ok');
             const result = await response.json();
             console.log('Registration successful:', result);
@@ -88,7 +87,7 @@ const ComingEvents = () => {
             {showDetails && eventById ? (
                 <div className="d-flex flex-column justify-content-center align-items-center vh-90 mt-0" style={{ maxWidth: '800px', width: '100%' }}>
                     <div className="card mb-3">
-                        <img className="card-img-top" src={`${process.env.REACT_APP_API_URL}/${eventById.brochure_path}`} alt="Event Brochure" />
+                        <img className="card-img-top" src={`${eventById.brochure_path}`} alt="Event Brochure" />
                         <div className="card-body">
                             <h5 className="card-title">{eventById.title}</h5>
                             <p className="card-text">Description:<br></br> {eventById.description}</p>
@@ -109,7 +108,7 @@ const ComingEvents = () => {
                         </div>
                         <div className="form-group d-inline-flex">
                             <label htmlFor="year" className="col-2">Year:</label>
-                            <input type="number" className="form-control" id="year"  value={regData.year} onChange={handleInputChange} required />
+                            <input type="text" className="form-control" id="year" value={regData.year} onChange={handleInputChange} required />
                         </div>
                         <div className="form-group d-inline-flex">
                             <label htmlFor="email" className="col-2">Email:</label>
@@ -130,7 +129,7 @@ const ComingEvents = () => {
                             >
                                 <Card.Img
                                     variant="top"
-                                    src={`${process.env.REACT_APP_API_URL}/${event.brochure_path}`}
+                                    src={`${event.brochure_path}`}
                                     alt=""
                                     style={{ objectFit: 'cover', height: '200px' }}
                                 />
