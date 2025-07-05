@@ -12,7 +12,7 @@ const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
     folder: 'event_brochures',               
-    allowed_formats: ['jpg', 'png', 'pdf'],
+    allowed_formats: ['jpg', 'jpeg', 'png', 'pdf'],
     transformation: [{ quality: 'auto' }]    
   },
 });
