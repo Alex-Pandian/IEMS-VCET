@@ -1,4 +1,4 @@
-const Photo = require('../models/Photo');
+const Photo = require('../models/photo');
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
 const path = require('path');
