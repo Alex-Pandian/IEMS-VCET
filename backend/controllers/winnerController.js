@@ -1,4 +1,4 @@
-const Winner = require('../models/Winner');
+const Winner = require('../models/winner');
 
 exports.addWinner = async (req, res) => {
     const { event_id, winners } = req.body;
